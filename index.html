@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>MIÓD MALINA</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241127214955">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="img/favicons/favicon.svg" sizes="any" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.webp">
+	<link rel="manifest" href="files/manifest.json">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+			box-sizing: border-box;
+		}
+
+		:root {
+			--linkcolor: #d8ae5e;
+			--btn-hover-col: #f99806;
+			--text-col: #000;
+			--darkwhite: #f4f4f4;
+			--abouttextcol: #090909;
+			--cardtextcol: #fff;
+			--titlepage-text-col: #fff;
+			--logo-width: 13.5625em;
+			--anima-duration: 0.7s;
+		}
+
+		.loader,
+		.loader__body {
+			display: flex;
+			align-items: center;
+		}
+
+		.loader {
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			z-index: 100;
+			justify-content: center;
+			pointer-events: none;
+		}
+
+		.loader__body {
+			flex-basis: 18.75rem;
+			padding-inline: 15px;
+			flex-direction: column;
+			row-gap: 1em;
+		}
+
+		.loader__logo {
+			max-width: var(--logo-width);
+		}
+
+		.loader__logo img {
+			max-width: 100%;
+		}
+
+		.loader__line {
+			position: relative;
+			width: 100%;
+			height: 1em;
+			border: 0.0625rem solid var(--text-col);
+			border-radius: 0.25rem;
+			overflow: hidden;
+		}
+
+		.loader__progress {
+			background-color: var(--linkcolor);
+			position: absolute;
+			top: 0px;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			transform: translateX(-100%);
+		}
+
+		.loader__text {
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			font-size: 0.9em;
+		}
+
+		body {
+			overflow: hidden;
+		}
+
+		body.load {
+			overflow: auto;
+
+		}
+
+		.load .loader {
+			top: -100%;
+			transition: top 1s linear 0s;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<div class="loader">
+			<div class="loader__body">
+				<div class="loader__logo">
+					<img src="img/logo-dark.svg" alt="logo">
+				</div>
+				<div class="loader__line">
+					<div class="loader__progress">
+					</div>
+					<div class="loader__text">0%</div>
+				</div>
+
+			</div>
+		</div>
+		<main class="page">
+			<section class="titlepage" id="top">
+				<div class="titlepage__bg">
+					<img src="img/titlepicture.webp" alt="titlepage-bg">
+				</div>
+				<div class="titlepage__container">
+					<div class="titlepage__header">
+						<a href="#" class="titlepage__logo">
+							<img src="img/logo-white.svg" alt="logo">
+						</a>
+						<nav class="titlepage__nav page-nav">
+							<ul class="page-nav__list">
+								<li class="page-nav__item">
+									<a href="#contacts" class="page-nav__link">Kontakt</a>
+								</li>
+								<li class="page-nav__item">
+									<a href="#o-nas" class="page-nav__link">O nas</a>
+								</li>
+								<li class="page-nav__item">
+									<a href="#service" class="page-nav__link">Atrakcje</a>
+								</li>
+								<li class="page-nav__item">
+									<a href="#advantage" class="page-nav__link">Udogodnenia</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="titlepage__content">
+						<h1 class="titlepage__title">
+							MIÓD MALINA
+						</h1>
+						<div class="titlepage__label">OSADA ISTEBNA</div>
+						<a href="#" class="titlepage__button button"><span>ZOBACZ WIĘCEJ</span></a>
+					</div>
+
+				</div>
+			</section>
+			<div class="about" id="o-nas">
+				<div class="about__container">
+					<article class="about__article">
+						<h2 class="about__titlebox titlebox">
+							<span class="titlebox__title">
+								O NAS
+							</span>
+							<span class="titlebox__subtitle">
+								TROCHĘ O NAS, DOMKACH I NASZEJ OSADZIE
+							</span>
+						</h2>
+						<p class="about__text">Osada Miód Malina powstała w 2023 roku. Do dyspozycji naszych gości mamy obecnie 4
+							domy, których wynajem uruchomiliśmy na koniec 2023 roku. Osada jest całkowicie nowa i czeka aby ugościć
+							i rozpieścić swoich gości..</p>
+						<a href="#" class="about__button button"><span>CZYTAJ DALEJ</span></a>
+					</article>
+				</div>
+			</div>
+			<section class="service" id="service">
+				<div class="service__container">
+					<div class="service__body">
+						<h2 class="service__titlebox titlebox">
+							<span class="titlebox__title">ATRAKCJE</span>
+							<span class="titlebox__subtitle">W POBLIŻU ZNAJDUJĄ SIĘ..</span>
+						</h2>
+						<div class="service__contant" data-lazy>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon01.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Park wodny</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon02.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Kuligi</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon03.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Stoki</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon04.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Resorty SPA</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon05.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Park linowy</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon06.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Resturacje i Karczmy</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon07.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Trójtyk</figcaption>
+							</figure>
+							<figure class="service__item">
+								<div class="service__image">
+									<img src="img/loading.svg" data-src="img/vector-services/vector-icon08.svg" alt="icon">
+								</div>
+								<figcaption class="service__caption">Szlaki turystyczne</figcaption>
+							</figure>
+						</div>
+						<a href="#" class="service__link"><span>ZOBACZ PEŁNĄ LISTĘ ATRAKCJI</span></a>
+					</div>
+				</div>
+			</section>
+			<section class="advantage" id="advantage">
+				<div class="advantage__container">
+					<div class="advantage__body">
+						<h2 class="advantage__titlebox titlebox">
+							<span class="titlebox__title">
+								UDOGODNIENIA
+							</span>
+							<span class="titlebox__subtitle">
+								CZEKAJĄ NA WAS..
+							</span>
+						</h2>
+						<section class="advantage__section">
+							<h3 class="advantage__section-title"><span>W NASZEJ OSADZIE CZEKAJĄ NA NASZYCH GOŚCI</span></h3>
+							<div class="advantage__board" data-flex-fr="3,600" data-lazy>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture01.webp" alt="picture">
+										<figcaption class="card__caption">NARCIARNIA</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture02.webp" alt="picture">
+										<figcaption class="card__caption">PLAC ZABAW DLA DZIECI</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture03.webp" alt="picture">
+										<figcaption class="card__caption">DUŻE TARASY Z WYPOSAŻENIEM</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture04.webp" alt="picture">
+										<figcaption class="card__caption">PRYWATNE BALIE OGRZEWANE DREWNEM</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture05.webp" alt="picture">
+										<figcaption class="card__caption">DUŻA WIATA Z PALENISKIEM</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture06.webp" alt="picture">
+										<figcaption class="card__caption">PRYWATNE GRILLE ORAZ DREWNO DO BALII</figcaption>
+									</figure>
+								</a>
+							</div>
+						</section>
+						<section class="advantage__section">
+							<h3 class="advantage__section-title"><span>W KAŻDYM DOMKU GOŚCIE MAJĄ DO DYSPOZYCJI</span></h3>
+							<div class="advantage__board" data-flex-fr="3,600" data-lazy>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture07.webp" alt="picture">
+										<figcaption class="card__caption">TARAS Z WIDOKIEM</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture08.webp" alt="picture">
+										<figcaption class="card__caption">ZESTAW RĘCZNIKÓW I SZLAFROKÓW</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture09.webp" alt="picture">
+										<figcaption class="card__caption">PLYTĘ INDUKCYJNĄ, PIEKARNIK I ZMYWARKĘ</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture10.webp" alt="picture">
+										<figcaption class="card__caption">SMART TV Z WIFI</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture11.webp" alt="picture">
+										<figcaption class="card__caption">KOMINEK TYPU KOZA Z DREWNEM</figcaption>
+									</figure>
+								</a>
+								<a href="#" class="advantage__card card">
+									<figure class="card__image">
+										<img src="img/loading.svg" data-src="img/bord-pictures/picture12.webp" alt="picture">
+										<figcaption class="card__caption">EKPRES DO KAWY NA ZIARNA</figcaption>
+									</figure>
+								</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+			<section class="contacts" id="contacts">
+				<div class="contacts__container">
+					<div class="contacts__body">
+						<h2 class="contacts__titlebox titlebox">
+							<span class="titlebox__title">
+								KONTAKT
+							</span>
+							<span class="titlebox__subtitle">
+								POZOSTAŃMY W KONTAKCIE..
+							</span>
+						</h2>
+						<ul class="contacts__infolist infolist">
+							<li class="infolist__item"><a href="tel:+48664769936" class="infolist__link icon-call">+48 664 769
+									936</a>
+							</li>
+							<li class="infolist__item">
+								<a href="miodmalina.istebna@gmail.com" class="infolist__link icon-mail" target="_blank">miodmalina.istebna@gmail.com</a>
+							</li>
+							<li class="infolist__item">
+								<a href="#" class="infolist__link icon-map" target="_blank">Jasnowice 2024, 43-470 Istebna</a>
+							</li>
+						</ul>
+						<ul class="contacts__social social">
+							<li class="social__item"><a href="#" class="social__link icon-face" target="_blank"></a></li>
+							<li class="social__item"><a href="#" class="social__link vk-link" target="_blank"></a></li>
+							<li class="social__item"><a href="#" class="social__link icon-inst" target="_blank"></a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<a href="#top" class="footer__logo">
+						<img src="img/logo-dark.svg" alt="logo">
+					</a>
+					<ul class="footer__social social">
+						<li class="social__item"><a href="#" class="social__link icon-face" target="_blank"></a></li>
+						<li class="social__item"><a href="#" class="social__link vk-link" target="_blank"></a></li>
+						<li class="social__item"><a href="#" class="social__link icon-inst" target="_blank"></a></li>
+					</ul>
+					<ul class="footer__contact-line contact-line">
+						<li class="contact-line__item"><a href="tel:+48664769936" class="contact-line__link">+48 664 769 936</a>
+						</li>
+						<li class="contact-line__item">
+							<a href="miodmalina.istebna@gmail.com" class="contact-line__link" target="_blank">miodmalina.istebna@gmail.com</a>
+						</li>
+						<li class="contact-line__item">
+							<a href="#" class="contact-line__link" target="_blank">Jasnowice 2024, 43-470 Istebna</a>
+						</li>
+					</ul>
+					<ul class="footer__footer-info footer-info">
+						<li class="footer-info__item">Miód Malina &copy; 2024 </li>
+						<li class="footer-info__item">Wykonane przez <a href="#" target="_blank">nkweb.pl</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20241127214955"></script>
+</body>
+
+</html>

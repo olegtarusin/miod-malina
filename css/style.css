@@ -159,32 +159,6 @@ h6 {
   min-width: 0;
   grid-column: 3/4
 }
-.ibg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover
-}
-.ibg--top {
-  -o-object-position: top;
-  object-position: top
-}
-.ibg--bottom {
-  -o-object-position: bottom;
-  object-position: bottom
-}
-.ibg--left {
-  -o-object-position: left;
-  object-position: left
-}
-.ibg--right {
-  -o-object-position: right;
-  object-position: right
-}
-.ibg--contain {
-  -o-object-fit: contain;
-  object-fit: contain
-}
 [class*=icon-]::before {
   color: var(--linkcolor)
 }
@@ -607,7 +581,7 @@ body {
 }
 @media (min-width:48.03125em) {
   .titlepage__title {
-    line-height: 118.76%
+    font-size: 6em
   }
   .card:nth-child(6n+3),
   .card:nth-child(6n+4) {
@@ -624,9 +598,6 @@ body {
   }
   .titlebox__title {
     font-size: 4rem
-  }
-  .titlepage__title {
-    font-size: 6rem
   }
   .titlepage__label {
     font-size: 1.5rem
@@ -652,20 +623,17 @@ body {
     padding-bottom: .9375rem
   }
 }
-@media (max-width:48em) {
-  .titlepage__container {
-    row-gap: 10vh
+@media (max-width:48em)and (min-height:28.15625em) {
+  .titlepage__title {
+    font-size: 5em
   }
+}
+@media (max-width:48em) {
   .card__caption {
     background-color: rgba(0,0,0,.3)
   }
   .service__contant {
     row-gap: 4em
-  }
-}
-@media (max-width:48em)and (min-height:37.53125em) {
-  .titlepage__title {
-    font-size: 4rem
   }
 }
 @media (max-width:20em) {
@@ -674,9 +642,6 @@ body {
   }
   .titlebox__title {
     font-size: 2rem
-  }
-  .titlepage__title {
-    font-size: 2.625rem
   }
   .titlepage__label {
     font-size: 1.125rem
@@ -726,9 +691,6 @@ body {
   }
   .titlebox__title {
     font-size: clamp(2rem ,1.1280653951rem + 4.3596730245vw ,4rem)
-  }
-  .titlepage__title {
-    font-size: clamp(2.625rem ,1.1536103542rem + 7.3569482289vw ,6rem)
   }
   .titlepage__label {
     font-size: clamp(1.125rem ,.9615122616rem + .8174386921vw ,1.5rem)
@@ -789,6 +751,11 @@ body {
     transition: background-color .7s linear 0s
   }
 }
+@media (max-height:48em) {
+  .titlepage__container {
+    row-gap: 10vh
+  }
+}
 @media (max-height:28.125em) {
   .titlepage__container {
     row-gap: 1em;
@@ -799,6 +766,11 @@ body {
     row-gap: 1em
   }
   .titlepage__title {
-    font-size: 2.625rem
+    font-size: 4em
+  }
+}
+@media (min-height:28.15625em) {
+  .titlepage__title {
+    line-height: 118.76%
   }
 }
